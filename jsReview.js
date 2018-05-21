@@ -20,7 +20,8 @@ var nestedArray = ['a string', ['This string is in a nested array',
 								'No matter how many there are'],
 					'This value is back in the main array'];
 
-/*Objects are very important in javascript. They hold key-value pairs called properties
+/*
+* Objects are very important in javascript. They hold key-value pairs called properties
 * The values can be anything, even arrays or other objects. Objects are declared with {} curly braces
 * The properties and values are seperated by a colon :
 * After each property, use a comma to seperate the next set of keys
@@ -30,12 +31,16 @@ var obj = {
 	property: "this is a value",
 	boolean: true,
 	number: 56,
+	function: function() {
+		console.log('Say hello');
+	},
 	array: ['these', 'are', 'in', 'an', 'array'],
 	objProp: {
 		example: "This property is on a nested object!"
 	}
 
 }
+
 
 //Conditional logic is how you control the flow of you program. 
 //If/else statements are used to conditionally 
@@ -52,7 +57,7 @@ if(statementBeingEvaluated){
 //You can also use multiple if checks with if/elseif
 if(thisIsTrue){
 	dostuff();
-} else if {
+} else if (thisOneisTrue) {
 	doOtherStuff();
 } else {
 	doMoreStuff();
@@ -82,9 +87,41 @@ for (var i = 0; i < Things.length; i++) {
 * The function name - this is represented by either var function = OR function functionName
 * You can also write functions with parameters. Parameters are variables that are found in the function definition
 * When you call a function, you pass in values for the parameters as arguments
+* Syntax for functions looks like this
 */
 
+//The function is declared with the keyword function and named. Paramters are also declared in the definition
+function consoleLogger() {
+	//This is the function body. All of the code between the {} gets executed when a function is called
+	//The value of parameter is set when the function is called and it becomes 
+	//a locally scoped variable within the scope of the function
+	console.log("I am a log");
+}
 
+//The function below is known as an anonymous function. The function itself isn't named,
+//it's saved as a variable
+var returnValue = function(value) {
+	//Functions can return a value using the return keyword
+	//return sends a value back to whatever called the function
+	//This is one way of getting private values out of a function
+	return value;
+}
 
+//Calling a function is done simply by typing the function name and passing in the arguments
+consoleLogger("This is an argument");
+console.log(returnValue("Another argument"));
 
+//In the above example, both of these function calls do essentailly the same thing
+
+//Functions can do almost anything. You can enclose conditional logic, loops, other function calls etc.
+//Anything you want to do multiple times can be a function
+
+/* 
+* Here are a few guidelines for writing functions:
+* Functions, above all, should contain encapsulated, reusable code
+* The code should focus on doing one job. This is known as the single responsibility principle
+* By ensuring that your function code only does one job, you create very readable, reusable functions 
+* that you can use to compose your software. Several smaller functions that each perform a single job
+* can be used together to create programs
+*/
 
